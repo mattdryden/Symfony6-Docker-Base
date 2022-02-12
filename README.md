@@ -3,28 +3,25 @@
 ## To get up and running via Docker
 
 ## Requirements
-- Node >= 14
 - Docker
 
 1) Clone repo to folder
 
 ```bash
-npm install
-npm run build
-npm run docker:build
-npm run docker:up
+./helper docker:build
+./helper docker:up
 ```
 
 2) Wait for everything to initialise and then visit http://localhost:3000/
 
-3) Run install & migration
+3) Run install
 
 ```bash
-npm run symfony:install
+./helper composer:install
 ```
 
 4) If any entities
 ```bash
-npm run symfony:migrate
-npm run symfony:fixtures
+./helper symfony:migrate
+./helper symfony:fixtures
 ```
