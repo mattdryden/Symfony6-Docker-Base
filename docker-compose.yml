@@ -1,0 +1,43 @@
+###############################################################################
+#                          Generated on .docker.io                          #
+###############################################################################
+version: '3.1'
+services:
+    mysql:
+        image: 'mysql:8.0'
+        container_name: default-mysql
+        working_dir: /application
+        volumes:
+            - './src:/application'
+        environment:
+            - MYSQL_ROOT_PASSWORD=password
+            - MYSQL_DATABASE=app
+            - MYSQL_USER=app
+            - MYSQL_PASSWORD=password
+        ports:
+            - '3002:3306'
+
+    webserver:
+        image: 'nginx:alpine'
+        container_name: default-webserver
+        working_dir: /application
+        volumes:
+            - './src:/application'
+            - './.docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf'
+        ports:
+            - '3000:80'
+
+    mailcatcher:
+      image: mtsmfm/mailcatcher
+      container_name: default-mailcatcher
+      ports:
+        - "1025:1025"
+        - "1080:1080"
+
+    php-fpm:
+        container_name: default-php
+        build: .docker/php-fpm
+        working_dir: /application
+        volumes:
+            - './src:/application'
+            - './.docker/php-fpm/php-ini-overrides.ini:/etc/php/8.1/fpm/conf.d/99-overrides.ini'
