@@ -37,7 +37,7 @@ while [ $# -gt 0 ]; do
       shift # past value
       ;;
     name)
-      sed -i "s/@*-mysql:3306/@$2-mysql:3306/g" src/.env
+      sed -i "s/@.*-mysql/@$2-mysql/" src/.env
       sed -i "s/containerName=.*/containerName=$2/" .env
       shift # past argument
       shift # past value
