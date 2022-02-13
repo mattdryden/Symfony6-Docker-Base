@@ -1,8 +1,8 @@
 <?php
 
-namespace Demo\Domain\Controller;
+namespace App\Controller;
 
-use Demo\Domain\Service\Demo as DemoService;
+use App\Service\DemoService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

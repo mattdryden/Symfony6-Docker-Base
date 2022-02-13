@@ -1,5 +1,0 @@
-maker:
-    # tell MakerBundle that all of your classes live in an
-    # Demo namespace, instead of the default App
-    # (e.g. Demo\Entity\Article, Demo\Command\MyCommand, etc)
-    root_namespace: 'Demo'

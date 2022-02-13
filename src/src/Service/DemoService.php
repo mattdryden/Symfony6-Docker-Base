@@ -1,10 +1,10 @@
 <?php
 
-namespace Demo\Domain\Service;
+namespace App\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
 
-class Demo
+class DemoService
 {
     private EntityManagerInterface $em;
 
