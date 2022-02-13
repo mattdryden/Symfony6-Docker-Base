@@ -12,7 +12,7 @@ options:
       symfony:console          run command in symfony console on container
       symfony:migrate          run symfony migration on container
       symfony:fixtures         run symfony fixtures on container
-      composer:install         install composer packages on container
+      composer                 run composer command on container
       help                     shows this"
 
 function docker_command() {
@@ -31,7 +31,8 @@ while [ $# -gt 0 ]; do
       ./$0 name $2
       ./$0 docker:build
       ./$0 docker:up
-      ./$0 composer:install
+      ./$0 composer install
+      ./$0 composer dump-autoload
       shift # past argument
       shift # past value
       ;;
@@ -76,9 +77,9 @@ while [ $# -gt 0 ]; do
       shift # past argument
       shift # past value
       ;;
-    composer:install)
+    composer)
       shift # past argument
-      docker_command "" "composer install"
+      docker_command "" "composer $1"
       shift # past value
       ;;
     help)

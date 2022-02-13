@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Controller;
+namespace Demo\Domain\Controller;
 
-use App\Entity\User;
-use App\Service\Demo as DemoService;
+use Demo\Domain\Service\Demo as DemoService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Request;
 
-class DemoController extends AbstractController
+class DefaultController extends AbstractController
 {
     private DemoService $demoService;
 
