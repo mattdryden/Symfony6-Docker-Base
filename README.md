@@ -8,17 +8,13 @@
 1) Clone repo to folder
 
 ```bash
-./helper docker:build
+./helper setup $name
 ./helper docker:up
 ```
 
 2) Wait for everything to initialise and then visit http://localhost:3000/
 
 3) Run install
-
-```bash
-./helper composer:install
-```
 
 4) If any entities
 ```bash
